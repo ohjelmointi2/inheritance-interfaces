@@ -38,9 +38,12 @@ public class Main {
          * application again and see what happens.
          *
          * What a nice way to change the behavior of the Java class without changing its
-         * code, right?
+         * code, right? This is especially useful when you are using a class that you
+         * cannot modify, such as a class from a third-party library.
          */
 
         PrinterWithTimestamp printer = new PrinterWithTimestamp();
+
+        printer.close();
     }
 }
