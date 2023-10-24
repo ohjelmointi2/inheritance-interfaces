@@ -36,8 +36,8 @@ dependencies {
 }
 
 application {
-    // Define the main class for the application.
-    mainClass = 'gradle.template.App'
+    // The main class is part of the dependency injection exercise
+    mainClass = 'dependency_injection.Main'
 }
 
 tasks.named('test') {

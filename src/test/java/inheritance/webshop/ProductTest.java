@@ -12,6 +12,7 @@ import org.junit.platform.commons.util.ReflectionUtils;
 
 public class ProductTest {
 
+    // The object under test
     private Product book = new Product("Book", "Full of exciting stories", 100.0);
 
     @Test
@@ -42,10 +43,11 @@ public class ProductTest {
      * This method checks that the given object has a method with the given name,
      * and that the method returns the given value.
      *
-     * This approach is not typically used in unit tests, as you almost never need
+     * This approach is not typically needed in unit tests, as you almost never need
      * to check that a method exists in your own code. However, as the task is to
-     * create a class with a specific method, we need some (hacky) way to check that
-     * the method exists and that it returns the expected value.
+     * create a class with specific methods, we need some (hacky) way to check that
+     * the method was created after this test was written, and that it returns the
+     * correct value.
      */
     protected static void checkMethod(Object object, String methodName, Object expectedValue) {
         Optional<Method> method = ReflectionUtils.findMethod(object.getClass(), methodName);
@@ -56,11 +58,8 @@ public class ProductTest {
         try {
             assertEquals(expectedValue, method.get().invoke(object));
 
-        } catch (RuntimeException e) {
-            throw e;
-
         } catch (IllegalAccessException | InvocationTargetException e) {
-            // This could happen if the method is not public
+            // This could happen for example if the method is not public
             throw new RuntimeException(e);
         }
     }

@@ -10,6 +10,9 @@ package interfaces;
  * should return a negative number if the population of this country is smaller
  * than, a positive number if it is larger than, and 0 if it is equal to the
  * population of the other country.
+ *
+ * Read more at
+ * https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html
  */
 public class Country {
 
