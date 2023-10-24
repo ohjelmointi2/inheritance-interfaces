@@ -5,19 +5,22 @@ package part02;
  * used as a base class for various product types in the next parts of the
  * exercise.
  *
- * The product class should have the following instance variables:
+ * You will need to add the following private instance variables to the class:
  * title (string), description (string) and price (double).
  *
- * You must create a constructor with the following signature:
- * public Product(String title, String description, double price)
+ * The class already has a constructor that takes the values as arguments, but
+ * you need to complete its implementation.
  *
  * Store the arguments in the instance variables. Also, create getter methods
  * getTitle(), getDescription() and getPrice() to return the values of the
  * instance variables.
  *
- * Also, create a toString() method that returns a string representation of the
- * product. You can decide yourself how the string should look like, but it must
- * contain the title, description and price of the product.
+ * Finally, create a toString() method that returns a string representation of
+ * the product. You can decide yourself how the string should look like, but it
+ * must contain the title, description and price of the product.
+ *
+ * This class itself does not utilize inheritance, but it will extended in the
+ * next part of the exercise.
  */
 public class Product {
     /*

@@ -15,36 +15,38 @@ import java.util.Random;
  * LinkedList classes directly. This way your code can operate on any type of a
  * list, not just on ArrayLists or LinkedLists. This makes your code more
  * flexible and compatible with code written by other people.
+ *
+ * See https://stackoverflow.com/a/2575454 for discussion about the topic.
  */
 public class Exercise3 {
 
+    /**
+     * Uncomment the lines marked with "fixme" and fix compilation errors.
+     *
+     * When uncommenting the lines one by one, you will notice that the getFirst
+     * and getLast methods in this class only accept ArrayLists and LinkedLists and
+     * cause compilation errors when given any other type.
+     *
+     * In this exercise, your task is to fix the methods so that they accept any
+     * list of Strings.
+     */
     public static void main(String[] args) {
-
-        // A list of programming languages. We don't know the actual type of the list,
-        // just that it implements the List interface.
+        // A list of programming languages. We don't know the actual type of the list:
         List<String> languages = List.of("java", "python", "javascript", "typescript", "c++", "kotlin", "c#");
 
-        // Two lists with the same contents, but different implementations.
+        // Two lists with the same content, but known implementations:
         ArrayList<String> array = new ArrayList<>(languages);
         LinkedList<String> linked = new LinkedList<>(languages);
 
         System.out.println(getFirst(array));
-        // System.out.println(getLast(array)); // this does not compile
+        // System.out.println(getLast(array)); // FIXME: this does not compile
 
         System.out.println(getLast(linked));
-        // System.out.println(getFirst(linked)); // this does not compile
+        // System.out.println(getFirst(linked)); // FIXME: this does not compile
 
-        // System.out.println(getFirst(languages)); // neither of these compile
+        // FIXME: neither of these compile:
+        // System.out.println(getFirst(languages));
         // System.out.println(getLast(languages));
-
-        /*
-         * TODO: The task for this exercise
-         *
-         * If you uncomment the lines above one by one, you will notice that the
-         * getFirst and getLast methods only accept ArrayLists and LinkedLists and cause
-         * compilation errors when given any other type. Fix the methods so that they
-         * accept any list of Strings.
-         */
 
     }
 
@@ -53,10 +55,10 @@ public class Exercise3 {
      */
     public static String getFirst(ArrayList<String> list) {
         /*
-         * This method now only takes an {@code ArrayList<String>} as an argument.
-         * However, the logic in the method is the same for all lists.
+         * Note that this method now takes an {@code ArrayList<String>} as an
+         * argument. However, the logic in the method should work with any list.
          *
-         * TODO: Make this method more flexible by changing the argument to accept any
+         * Make this method more flexible by changing the argument to accept any
          * type that implements the List<String> interface.
          */
         return list.get(0);
@@ -66,7 +68,7 @@ public class Exercise3 {
      * Returns the last element of the given list.
      */
     public static String getLast(LinkedList<String> list) {
-        // TODO: Same as above, change this method to accept any type of list.
+        // Same as above, change this method to accept any type of list.
         return list.get(list.size() - 1);
     }
 
