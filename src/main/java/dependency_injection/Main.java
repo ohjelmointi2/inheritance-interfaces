@@ -12,12 +12,12 @@ public class Main {
      *
      * Note that the Application class does not directly use the
      * PrinterWithTimestamp class, but it uses the PrintStream class, which is a
-     * superclass of the that class.
+     * superclass of that class.
      *
      * The familiar System.out object is an instance of the PrintStream class, so it
      * can be used in the Application by passing it in the constructor. However,
-     * we are not limited to just using the System.out object in the Application,
-     * but we can also use other PrintStream objects, such as a
+     * we are not limited to just using the System.out object in the Application.
+     * We can also use any other PrintStream objects, such as our own
      * PrinterWithTimestamp. This way we can modify the behavior of the Application
      * class without changing its code by passing in a different PrintStream object.
      * This is pattern is called dependency injection and it is a common way to make

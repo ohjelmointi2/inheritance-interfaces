@@ -19,22 +19,12 @@ import java.time.format.DateTimeFormatter;
  * If you want, you can read more about the PrintStream class here:
  * https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html
  *
- * The purpose of this class is to print a timestamp before the actual message,
- * so that you can see when the message was printed. This could be useful in
- * scenarios where you would want to look back at the console output and see
- * when something happened. The actual logic is implemented by overriding the
- * original println method with a new one that adds the timestamp before the
- * message.
- *
- * The subclasses can call the methods and constructors of the superclass by
- * using the super keyword. In this case, the super keyword is used to call the
- * constructor of the superclass with the System.out object as an argument. This
- * way, the methods of the superclass print their output to System.out.
- *
- * The super keyword is also used in the println method to call the original
- * implementation. This way we don't have to implement the whole method
- * ourselves, but we can just add the timestamp to the message and then call the
- * original implementation.
+ * The purpose of this class is to automatically print a timestamp before the
+ * actual message, so that you can see when the message was printed. This could
+ * be useful in scenarios where you would want to look back at the console
+ * output and see when something happened. The actual logic is implemented by
+ * overriding the original println method with a new one that adds the timestamp
+ * before the message.
  */
 public class PrinterWithTimestamp extends PrintStream {
 
@@ -64,7 +54,8 @@ public class PrinterWithTimestamp extends PrintStream {
 
         // Instead of implementing the whole println method, we can just call the
         // original implementation with the super keyword. This way we don't have to
-        // worry about the actual printing logic
+        // implement the actual printing logic ourselves, which reduces the amount of
+        // code we need to write.
         super.println(timestamp + ": " + message);
     }
 }
