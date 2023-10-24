@@ -1,4 +1,4 @@
-package part02;
+package inheritance.webshop;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

@@ -1,4 +1,4 @@
-package part03;
+package interfaces;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -18,7 +18,7 @@ import java.util.Random;
  *
  * See https://stackoverflow.com/a/2575454 for discussion about the topic.
  */
-public class Exercise3 {
+public class ParameterExercise {
 
     /**
      * Uncomment the lines marked with "fixme" and fix compilation errors.

@@ -1,4 +1,4 @@
-package part02;
+package inheritance.webshop;
 
 /**
  * This class represents a vehicle in a webshop application. Vehicles are

@@ -1,4 +1,4 @@
-package part02;
+package inheritance.webshop;
 
 /**
  * The Ticket class represents a concert or sports event ticket in a webshop.

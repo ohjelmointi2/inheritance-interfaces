@@ -1,4 +1,4 @@
-package part04;
+package dependency_injection;
 
 public class Main {
 

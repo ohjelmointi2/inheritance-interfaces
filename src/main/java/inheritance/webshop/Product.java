@@ -1,4 +1,4 @@
-package part02;
+package inheritance.webshop;
 
 /**
  * This class represents a product in a webshop application. The class will be

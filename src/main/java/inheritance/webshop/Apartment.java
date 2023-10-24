@@ -1,4 +1,4 @@
-package part02;
+package inheritance.webshop;
 
 /**
  * The Apartment class represents an apartment in a webshop. Like the Vehicle
