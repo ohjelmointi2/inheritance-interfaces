@@ -5,11 +5,13 @@ import java.util.List;
 
 /**
  * This class is a dummy application that receives a PrintStream object in its
- * constructor. The PrintStream object is used to print the output of the
+ * constructor. The given rintStream object is used to print the output of the
  * application. This class does not know where the output is printed: it could
  * be printed to the console, to a file, or to a network socket.
+ *
+ * This class implements the Runnable interface, but that is not important here.
  */
-public class Application {
+public class Application implements Runnable {
 
     // The PrintStream object to which the output is printed
     private PrintStream output;
@@ -36,6 +38,7 @@ public class Application {
      * Runs the application. There is nothing special here, just a simple method
      * that prints some output to the PrintStream we passed in the constructor.
      */
+    @Override
     public void run() {
         output.println("Starting the application...");
 

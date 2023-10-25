@@ -27,23 +27,24 @@ public class Main {
 
         /*
          * A new application object is created with the System.out object as an
-         * argument. Run the code and see the output.
+         * argument. Run this code and see the output.
          */
         Application app = new Application(System.out);
         app.run();
 
         /*
          * After running the application, try creating an Application and passing in an
-         * instance of the PrinterWithTimestamp class as an argument. Then run the
-         * application again and see what happens.
+         * instance of the PrinterWithTimestamp class as an argument. 
+         * 
+         * PrinterWithTimestamp printer = new PrinterWithTimestamp();
+         * ...
+         * 
+         * Then run the application again and see what happens.
          *
          * What a nice way to change the behavior of the Java class without changing its
          * code, right? This is especially useful when you are using a class that you
          * cannot modify, such as a class from a third-party library.
          */
 
-        PrinterWithTimestamp printer = new PrinterWithTimestamp();
-
-        printer.close();
     }
 }
