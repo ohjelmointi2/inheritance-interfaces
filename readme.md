@@ -122,13 +122,13 @@ Tämä osa tarkastetaan [`WebShopTest`](./src/test/java/inheritance/webshop/WebS
 
 ### Osa 4: oman rajapinnan toteuttaminen *(soveltava, 10 % + 10 %)*
 
-**[MarkdownExport.java](./src/main/java/interfaces/markdown/MarkdownExport.java)**
+**MarkdownExport-rajapinta**
 
 Tehtävän tässä osassa sinun tulee toteuttaa itse oma rajapinta nimeltä [`MarkdownExport`] tiedostoon [MarkdownExport.java](./src/main/java/interfaces/markdown/MarkdownExport.java). Määrittele tähän rajapintaan yksi metodi, `exportMarkdown()`. Metodi ei saa ottaa parametreja ja sen tulee palauttaa merkkijono.
 
 Rajapinnan tarkoituksena on määritellä sen toteuttaville luokille metodi, joka muodostaa oliosta [markdown](https://www.markdownguide.org/)-muotoisen merkkijonoesityksen esimerkiksi tiedostoon tallentamista varten. Tehtävän ratkaisemiseksi sinun ei tarvitse tuntea Markdown-syntaksia, riittää että seuraat annettuja esimerkkejä.
 
-**[Pizza.java](./src/main/java/interfaces/markdown/Pizza.java)**
+**Pizza-luokka**
 
 Kun olet määritellyt edellä mainitun rajapinnan, muokkaa tehtäväpohjan valmista [`Pizza`-luokkaa](./src/main/java/interfaces/markdown/Pizza.java) siten, että se toteuttaa kyseisen rajapinnan.
 
@@ -151,6 +151,8 @@ MarkdownExport-rajapinta sekä Pizza-luokka testataan valmiilla [`MarkdownExport
 ./gradlew test --tests MarkdownExportTest      # unix
 .\gradlew.bat test --tests MarkdownExportTest  # windows
 ```
+
+**Product-luokka**
 
 Jatkokehitä vielä tämän tehtäväpaketin edellisessä osassa kehitettyä [`Product`-luokkaa](./src/main/java/inheritance/webshop/Product.java) siten, että myös se toteuttaa [`MarkdownExport`-rajapinnan](./src/main/java/interfaces/markdown/MarkdownExport.java). Tuotteiden osalta markdown-esityksessä täytyy olla tuotteen nimi, kuvaus ja hinta, mutta muuten voit määritellä merkkijonon muodon vapaasti.
 
