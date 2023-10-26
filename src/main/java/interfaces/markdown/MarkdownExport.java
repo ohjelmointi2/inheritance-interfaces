@@ -8,8 +8,8 @@ package interfaces.markdown;
  * the method here, just declare it. Any class that implements this interface
  * will implement the method with its own implementation.
  *
- * For example, an imaginary Pizza class could later implement this interface
- * and return a markdown representation of a pizza object, for example:
+ * For example, a Pizza class could later implement this interface and return a
+ * markdown representation of a pizza object, for example:
  *
  * <pre>
  * # Hawaiian

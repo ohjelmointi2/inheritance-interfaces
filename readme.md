@@ -33,7 +33,7 @@ Klikkaamalla yllä olevan linkin takaa viimeisintä *"GitHub Classroom Workflow"
 💡 *Voit lähettää ratkaisusi arvioitavaksi niin monta kertaa kuin on tarpeen tehtävän määräaikaan asti. Varmista kuitenkin, että viimeisin suoritus tuottaa parhaat pisteet, koska vain viimeisimmät pisteet jäävät voimaan.*
 
 
-### Osa 1: perintä *(perusteet, 30 %)*
+### Osa 1: perintä *(perusteet, 20 %)*
 
 Tämän tehtäväpohjan [inheritance.webshop](./src/main/java/inheritance/webshop/)-paketissa on neljä Java-luokkaa, joiden tarkoitus on mallintaa kuvitteellisessa web-pohjaisessa osto- ja myyntipalvelussa olevia tuotteita. Oletuksena kaikki tuotteet sisältävät tyypistä riippumatta [`Product`](./src/main/java/inheritance/webshop/Product.java)-luokassa määritellyt tiedot (title, description, price). [Ajoneuvoille](./src/main/java/inheritance/webshop/Vehicle.java), [asunnoille](./src/main/java/inheritance/webshop/Apartment.java) ja [pääsylipuille](./src/main/java/inheritance/webshop/Ticket.java) on omat luokkansa, jotka sisältävät juuri näille tuotteille ominaisia lisätietoja:
 
@@ -122,16 +122,53 @@ Tämä osa tarkastetaan [`WebShopTest`](./src/test/java/inheritance/webshop/WebS
 .\gradlew.bat test --tests CountryTest  # windows
 ```
 
-### Osa 4: oman rajapinnan toteuttaminen *(soveltava, 15 %)*
+### Osa 4: oman rajapinnan toteuttaminen *(soveltava, 10 % + 10 %)*
 
-TODO
+**[MarkdownExport.java](./src/main/java/interfaces/markdown/MarkdownExport.java)**
 
-```sh
-./gradlew test --tests TODO      # unix
-.\gradlew.bat test --tests TODO  # windows
+Tehtävän tässä osassa sinun tulee toteuttaa itse oma rajapinta nimeltä [`MarkdownExport`] tiedostoon [MarkdownExport.java](./src/main/java/interfaces/markdown/MarkdownExport.java). Määrittele tähän rajapintaan yksi metodi, `exportMarkdown()`. Metodi ei saa ottaa parametreja ja sen tulee palauttaa merkkijono.
+
+Rajapinnan tarkoituksena on määritellä sen toteuttaville luokille metodi, joka muodostaa oliosta [markdown](https://www.markdownguide.org/)-muotoisen merkkijonoesityksen esimerkiksi tiedostoon tallentamista varten. Tehtävän ratkaisemiseksi sinun ei tarvitse tuntea Markdown-syntaksia, riittää että seuraat annettuja esimerkkejä.
+
+**[Pizza.java](./src/main/java/interfaces/markdown/Pizza.java)**
+
+Kun olet määritellyt edellä mainitun rajapinnan, muokkaa tehtäväpohjan valmista [`Pizza`-luokkaa](./src/main/java/interfaces/markdown/Pizza.java) siten, että se toteuttaa kyseisen rajapinnan.
+
+Pizzojen Markdown-esitystapa sisältää pizzan nimen otsikkona (`#`) sekä listan (`-`) täytteistä. Merkkijonon lopussa on oltava pizzan hinta, esimerkiksi seuraavasti:
+
+```md
+# Hawaiian
+
+Toppings:
+- ham
+- pineapple
+- mozarella
+
+Price: 10.90
 ```
 
-### Osa 5: "dependency injection" *(edistynyt, 15 %)*
+MarkdownExport-rajapinta sekä Pizza-luokka testataan valmiilla [`MarkdownExportTest`-testiluokalla](./src/test/java/interfaces/markdown/MarkdownExportTest.java):
+
+```sh
+# 10 % pisteistä:
+./gradlew test --tests MarkdownExportTest      # unix
+.\gradlew.bat test --tests MarkdownExportTest  # windows
+```
+
+Jatkokehitä vielä tämän tehtäväpaketin edellisessä osassa kehitettyä [`Product`-luokkaa](./src/main/java/inheritance/webshop/Product.java) siten, että myös se toteuttaa [`MarkdownExport`-rajapinnan](./src/main/java/interfaces/markdown/MarkdownExport.java). Tuotteiden osalta markdown-esityksessä täytyy olla tuotteen nimi, kuvaus ja hinta, mutta muuten voit määritellä merkkijonon muodon vapaasti.
+
+Product-luokan osalta tehtävä tarkastetaan erillisellä [`ProductMarkdownTest`-testiluokalla](./src/test/java/interfaces/markdown/ProductMarkdownTest.java):
+
+```sh
+# 10 % pisteistä:
+./gradlew test --tests ProductMarkdownTest      # unix
+.\gradlew.bat test --tests ProductMarkdownTest  # windows
+```
+
+💡 *Huomaa, että koska `Vehicle`-luokka perii `Product`-luokan, myös `Vehicle` täyttää tämän rajapinnan "automaattisesti". Jos haluat, että ajoneuvoilla on erilainen markdown-esitys kuin muilla tuotteilla, voit vapaasti toteuttaa siihen erilaisen toteutuksen exportMarkdown-metodista.*
+
+
+### Osa 5: "dependency injection" *(edistynyt, 20 %)*
 
 Viimeisenä osana tässä tehtäväpaketissa on perintää soveltava "dependency injection"-esimerkki:
 

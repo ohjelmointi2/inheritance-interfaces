@@ -1,12 +1,13 @@
 package interfaces.markdown;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.util.ReflectionUtils;
 
@@ -37,13 +38,24 @@ public class MarkdownExportTest {
     public void testExportingApizzaObjectAsMarkdown() {
         markdownExportInterfaceMustHaveExportMarkdownMethod(); // First test that the interface is correct
 
-        Optional<Method> method = ReflectionUtils.findMethod(Pizza.class, "exportMarkdown");
+        String markdown = callExportMarkdown(margherita);
+
+        assertTrue(markdown.contains("# Margherita"), "The markdown representation must contain the pizza name.");
+        assertTrue(markdown.contains("mozzarella"), "The markdown representation must contain the pizza toppings.");
+    }
+
+    /*
+     * Helper method for calling the exportMarkdown() method of an object.
+     *
+     * This method uses reflection to find the method and invoke it. This
+     * approach is not typically used in unit tests, but in this exercise we need to
+     * call a method that does not exist at the time of writing the tests.
+     */
+    protected static String callExportMarkdown(Object object) {
+        Optional<Method> method = ReflectionUtils.findMethod(object.getClass(), "exportMarkdown");
 
         try {
-            String markdown = (String) method.get().invoke(margherita);
-
-            assertTrue(markdown.contains("# Margherita"), "The markdown representation must contain the pizza name.");
-            assertTrue(markdown.contains("mozzarella"), "The markdown representation must contain the pizza toppings.");
+            return (String) method.get().invoke(object);
 
         } catch (IllegalAccessException | InvocationTargetException | IllegalArgumentException ex) {
             throw new RuntimeException(ex);
