@@ -1,7 +1,7 @@
 package inheritance.webshop;
 
 /**
- * This class represents a product in a webshop application. The class will be
+ * This class represents products in a webshop application. The class will be
  * used as a base class for various product types in the next parts of the
  * exercise.
  *

@@ -1,9 +1,9 @@
 package inheritance.webshop;
 
 /**
- * This class represents a vehicle in a webshop application. Vehicles are
+ * This class represents vehicles in a webshop application. Vehicles are
  * products, but they have some additional properties that other products do not
- * have, such as the manufacturer, the model name and the model year.
+ * have, such as the manufacturer, the model and the year.
  *
  * In this exercise, you need to make the Vehicle class inherit the Product
  * class. Here, you will need to use the `extends` keyword. You also need to add

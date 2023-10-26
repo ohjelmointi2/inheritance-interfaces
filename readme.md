@@ -52,8 +52,8 @@ classDiagram
     + description: String
     + price: double
     - manufacturer: String
-    - modelName: String
-    - modelYear: int
+    - model: String
+    - year: int
   }
 
   class Apartment {
