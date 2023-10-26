@@ -14,14 +14,16 @@ public class Main {
      * PrinterWithTimestamp class, but it uses the PrintStream class, which is a
      * superclass of that class.
      *
-     * The familiar System.out object is an instance of the PrintStream class, so it
-     * can be used in the Application by passing it in the constructor. However,
-     * we are not limited to just using the System.out object in the Application.
-     * We can also use any other PrintStream objects, such as our own
-     * PrinterWithTimestamp. This way we can modify the behavior of the Application
-     * class without changing its code by passing in a different PrintStream object.
-     * This is pattern is called dependency injection and it is a common way to make
-     * the code more flexible and reusable.
+     * The familiar System.out object is an also an instance of the PrintStream
+     * class, so it can be used in the Application by passing it in the constructor.
+     * However, we are not limited to just using the System.out object in the
+     * Application. We can also use any other PrintStream objects, such as our own
+     * PrinterWithTimestamp.
+     *
+     * This way we can modify the behavior of the Application class without changing
+     * its code by passing in a different PrintStream object. This pattern is called
+     * dependency injection and it is a common way to make code more flexible and
+     * reusable.
      */
     public static void main(String... args) {
 
@@ -33,13 +35,13 @@ public class Main {
         app.run();
 
         /*
-         * After running the application, try creating an Application and passing in an
-         * instance of the PrinterWithTimestamp class as an argument. 
-         * 
+         * After running the code, try creating an Application and passing in an
+         * instance of the PrinterWithTimestamp class as an argument.
+         *
          * PrinterWithTimestamp printer = new PrinterWithTimestamp();
          * ...
-         * 
-         * Then run the application again and see what happens.
+         *
+         * Then run this class again and see what happens.
          *
          * What a nice way to change the behavior of the Java class without changing its
          * code, right? This is especially useful when you are using a class that you

@@ -52,8 +52,8 @@ classDiagram
     + description: String
     + price: double
     - manufacturer: String
-    - model: String
-    - year: int
+    - modelName: String
+    - modelYear: int
   }
 
   class Apartment {
@@ -124,15 +124,15 @@ Tämä osa tarkastetaan [`WebShopTest`](./src/test/java/inheritance/webshop/WebS
 
 **MarkdownExport-rajapinta**
 
-Tehtävän tässä osassa sinun tulee toteuttaa itse oma rajapinta nimeltä [`MarkdownExport`] tiedostoon [MarkdownExport.java](./src/main/java/interfaces/markdown/MarkdownExport.java). Määrittele tähän rajapintaan yksi metodi, `exportMarkdown()`. Metodi ei saa ottaa parametreja ja sen tulee palauttaa merkkijono.
+Tehtävän tässä osassa sinun tulee toteuttaa itse oma rajapinta nimeltä `MarkdownExport`. Rajapinta toteutetaan tiedostoon [MarkdownExport.java](./src/main/java/interfaces/markdown/MarkdownExport.java). Määrittele tähän rajapintaan yksi metodi: `exportMarkdown()`. Metodi ei saa ottaa parametreja ja sen tulee palauttaa merkkijono.
 
-Rajapinnan tarkoituksena on määritellä sen toteuttaville luokille metodi, joka muodostaa oliosta [markdown](https://www.markdownguide.org/)-muotoisen merkkijonoesityksen esimerkiksi tiedostoon tallentamista varten. Tehtävän ratkaisemiseksi sinun ei tarvitse tuntea Markdown-syntaksia, riittää että seuraat annettuja esimerkkejä.
+Rajapinnan tarkoituksena on määritellä sen toteuttaville luokille `exportMarkdown()`-metodi, joka muodostaa oliosta [markdown](https://www.markdownguide.org/)-muotoisen merkkijonoesityksen esimerkiksi tiedostoon tallentamista varten. Tehtävän ratkaisemiseksi sinun ei tarvitse tuntea Markdown-syntaksia, riittää että seuraat annettuja esimerkkejä.
 
 **Pizza-luokka**
 
 Kun olet määritellyt edellä mainitun rajapinnan, muokkaa tehtäväpohjan valmista [`Pizza`-luokkaa](./src/main/java/interfaces/markdown/Pizza.java) siten, että se toteuttaa kyseisen rajapinnan.
 
-Pizzojen Markdown-esitystapa sisältää pizzan nimen otsikkona (`#`) sekä listan (`-`) täytteistä. Merkkijonon lopussa on oltava pizzan hinta, esimerkiksi seuraavasti:
+Pizza-luokan `exportMarkdown()`-metodin palauttamassa merkkijonossa on oltava pizzan nimi otsikkona (`# nimi`) sekä lista täytteistä (`- täyte`). Merkkijonon lopussa on oltava pizzan hinta, esimerkiksi seuraavasti:
 
 ```md
 # Hawaiian
@@ -156,7 +156,9 @@ MarkdownExport-rajapinta sekä Pizza-luokka testataan valmiilla [`MarkdownExport
 
 Jatkokehitä vielä tämän tehtäväpaketin edellisessä osassa kehitettyä [`Product`-luokkaa](./src/main/java/inheritance/webshop/Product.java) siten, että myös se toteuttaa [`MarkdownExport`-rajapinnan](./src/main/java/interfaces/markdown/MarkdownExport.java). Tuotteiden osalta markdown-esityksessä täytyy olla tuotteen nimi, kuvaus ja hinta, mutta muuten voit määritellä merkkijonon muodon vapaasti.
 
-Product-luokan osalta tehtävä tarkastetaan erillisellä [`ProductMarkdownTest`-testiluokalla](./src/test/java/interfaces/markdown/ProductMarkdownTest.java):
+Koska `Product`-luokka sijaitsee eri paketissa kuin MarkdownExport-rajapinta, tulee siihen kirjoittaa `import`-komento: `import interfaces.markdown.MarkdownExport;`
+
+`Product`-luokan osalta tehtävä tarkastetaan erillisellä [`ProductMarkdownTest`-testiluokalla](./src/test/java/interfaces/markdown/ProductMarkdownTest.java):
 
 ```sh
 ./gradlew test --tests ProductMarkdownTest      # unix
@@ -176,11 +178,14 @@ Viimeisenä osana tässä tehtäväpaketissa on perintää soveltava "dependency
 
 Tehtävän viimeisen osan ratkaiseminen vaatii vain minimaalisen muutoksen lähdekoodiin. Pääpaino tässä osassa onkin siinä, että perehdyt annettuihin luokkiin ja niissä esitettyihin kommentteihin:
 
-* [`Main`](./src/main/java/dependency_injection/Main.java) (tehtävän keskeisin tehtävänanto löytyy tästä luokasta)
+* [`Main`](./src/main/java/dependency_injection/Main.java)
+
+  *Tehtävän keskeisin tehtävänanto löytyy tästä luokasta. Tämä on ainoa luokka, jota tässä osassa tulee muuttaa.*
+
 * [`Application`](./src/main/java/dependency_injection/Application.java)
 * [`PrinterWithTimestamp`](./src/main/java/dependency_injection/PrinterWithTimestamp.java)
 
-Koska tehtävässä ei juurikaan koodata, ei sille ole valmista yksikkötestiä. Sen sijaan suorita [`Main`](./src/main/java/dependency_injection/Main.java)-pääohjelmaluokkaa koodieditorissasi ja tutustu ohjelman tulosteisiin. Saatuasi tämän osan valmiiksi, se arvioidaan suorittamalla pääohjelmaluokka Gradle:n avulla:
+Koska tehtävässä ei juurikaan koodata, ei sille ole valmista yksikkötestiä. Varmista ohjelman ja tekemäsi muutoksen toimivuus suorittamalla [`Main`](./src/main/java/dependency_injection/Main.java)-pääohjelmaluokkaa ja tutustu ohjelman tulosteisiin. Tehtävä arvioidaan automaattisesti suorittamalla `Main`-luokka Gradle:n avulla ja tutkimalla sen tulosteita:
 
 ```sh
 ./gradlew run      # unix
