@@ -27,9 +27,9 @@ public class WebShop {
     }
 
     /**
-     * As Vehicle, Ticket, Apartment objects can be used anywhere where a Product is
-     * expected, you can't always be sure what kind of object you are dealing with.
-     * Therefore it is sometimes necessary to check the type of the object.
+     * As Vehicle, Ticket and Apartment objects can be used anywhere where a Product
+     * is expected, you can't always be sure what kind of object you are dealing
+     * with. Therefore it is sometimes necessary to check the type of the object.
      *
      * Complete this method so that it checks if the given product is actually a
      * Vehicle. If the given product is a Vehicle, the method should return true.

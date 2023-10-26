@@ -8,7 +8,7 @@ package inheritance.webshop;
  * In this exercise, you need to make the Vehicle class inherit the Product
  * class. Here, you will need to use the `extends` keyword. You also need to add
  * the following private instance variables to the class: manufacturer (string),
- * modelName (string) and modelYear (int) and getters for each of them.
+ * model (string) and year (int) and getters for each of them.
  *
  * The constructor of the Vehicle class is already present, but you will need to
  * complete its implementation.
@@ -21,8 +21,8 @@ package inheritance.webshop;
  */
 public class Vehicle {
 
-    public Vehicle(String title, String description, double price, String manufacturer, String modelName,
-            int modelYear) {
+    public Vehicle(String title, String description, double price, String manufacturer, String model,
+            int year) {
         /*
          * TODO: complete the constructor
          *
