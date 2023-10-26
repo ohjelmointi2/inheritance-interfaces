@@ -33,7 +33,7 @@ Klikkaamalla yllä olevan linkin takaa viimeisintä *"GitHub Classroom Workflow"
 💡 *Voit lähettää ratkaisusi arvioitavaksi niin monta kertaa kuin on tarpeen tehtävän määräaikaan asti. Varmista kuitenkin, että viimeisin suoritus tuottaa parhaat pisteet, koska vain viimeisimmät pisteet jäävät voimaan.*
 
 
-### Osa 1: perintä *(perusteet, 20 %)*
+### Osa 1: perintä *(perusteet, 10 % + 10 %)*
 
 Tämän tehtäväpohjan [inheritance.webshop](./src/main/java/inheritance/webshop/)-paketissa on neljä Java-luokkaa, joiden tarkoitus on mallintaa kuvitteellisessa web-pohjaisessa osto- ja myyntipalvelussa olevia tuotteita. Oletuksena kaikki tuotteet sisältävät tyypistä riippumatta [`Product`](./src/main/java/inheritance/webshop/Product.java)-luokassa määritellyt tiedot (title, description, price). [Ajoneuvoille](./src/main/java/inheritance/webshop/Vehicle.java), [asunnoille](./src/main/java/inheritance/webshop/Apartment.java) ja [pääsylipuille](./src/main/java/inheritance/webshop/Ticket.java) on omat luokkansa, jotka sisältävät juuri näille tuotteille ominaisia lisätietoja:
 
@@ -82,13 +82,11 @@ Tässä tehtävässä sinun tulee ensin toteuttaa [`Product`](./src/main/java/in
 Molemmille luokille on omat testit: [ProductTest](./src/test/java/inheritance/webshop/ProductTest.java) ja [VehicleTest](./src/test/java/inheritance/webshop/VehicleTest.java). Voit suorittaa testit koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):
 
 ```sh
-# Product-luokka, 10 %
 ./gradlew test --tests ProductTest      # unix
 .\gradlew.bat test --tests ProductTest  # windows
 ```
 
 ```sh
-# Vehicle-luokka, 20 %
 ./gradlew test --tests VehicleTest      # unix
 .\gradlew.bat test --tests VehicleTest  # windows
 ```
@@ -150,7 +148,6 @@ Price: 10.90
 MarkdownExport-rajapinta sekä Pizza-luokka testataan valmiilla [`MarkdownExportTest`-testiluokalla](./src/test/java/interfaces/markdown/MarkdownExportTest.java):
 
 ```sh
-# 10 % pisteistä:
 ./gradlew test --tests MarkdownExportTest      # unix
 .\gradlew.bat test --tests MarkdownExportTest  # windows
 ```
@@ -160,7 +157,6 @@ Jatkokehitä vielä tämän tehtäväpaketin edellisessä osassa kehitettyä [`P
 Product-luokan osalta tehtävä tarkastetaan erillisellä [`ProductMarkdownTest`-testiluokalla](./src/test/java/interfaces/markdown/ProductMarkdownTest.java):
 
 ```sh
-# 10 % pisteistä:
 ./gradlew test --tests ProductMarkdownTest      # unix
 .\gradlew.bat test --tests ProductMarkdownTest  # windows
 ```
