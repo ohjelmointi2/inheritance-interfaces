@@ -1,4 +1,4 @@
-package interfaces;
+package interfaces.country;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,19 +1,18 @@
 package inheritance.webshop;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.util.ReflectionUtils;
 
 public class ProductTest {
 
     // The object under test
-    private Product book = new Product("Book", "Full of exciting stories", 100.0);
+    private final Product book = new Product("Book", "Full of exciting stories", 100.0);
 
     @Test
     void getTitleIsPresentAndReturnsTheTitle() throws Exception {
@@ -40,14 +39,14 @@ public class ProductTest {
     }
 
     /**
-     * This method checks that the given object has a method with the given name,
-     * and that the method returns the given value.
+     * This method checks that the given object has a method with the given
+     * name, and that the method returns the given value.
      *
-     * This approach is not typically needed in unit tests, as you almost never need
-     * to check that a method exists in your own code. However, as the task is to
-     * create a class with specific methods, we need some (hacky) way to check that
-     * the method was created after this test was written, and that it returns the
-     * correct value.
+     * This approach is not typically needed in unit tests, as you almost never
+     * need to check that a method exists in your own code. However, as the task
+     * is to create a class with specific methods, we need some (hacky) way to
+     * check that the method was created after this test was written, and that
+     * it returns the correct value.
      */
     protected static void checkMethod(Object object, String methodName, Object expectedValue) {
         Optional<Method> method = ReflectionUtils.findMethod(object.getClass(), methodName);

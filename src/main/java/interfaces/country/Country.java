@@ -1,4 +1,4 @@
-package interfaces;
+package interfaces.country;
 
 /**
  * Improve this class by implementing the Comparable interface. The class should

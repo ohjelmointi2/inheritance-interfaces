@@ -1,14 +1,14 @@
-package interfaces;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+package interfaces.country;
 
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 public class CountryTest {
+
     // https://en.wikipedia.org/wiki/Nordic_countries, 9.8.2023
     private Country den = new Country("Denmark", 5_894_687);
     private Country fin = new Country("Finland", 5_587_442);
