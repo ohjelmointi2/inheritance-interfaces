@@ -16,7 +16,7 @@ public class MarkdownExportTest {
     private final Pizza margherita = new Pizza("Margherita", 8.99, List.of("tomato sauce", "mozzarella", "basil"));
 
     @Test
-    public void markdownExportInterfaceMustHaveExportMarkdownMethod() {
+    public void theInterfaceMustHaveExportMarkdownMethod() {
         assertTrue(MarkdownExport.class.isInterface(), "MarkdownExport must be an interface.");
 
         try {
@@ -25,7 +25,7 @@ public class MarkdownExportTest {
             assertEquals(String.class, returnType, "The exportMarkdown() method must return a String.");
 
         } catch (NoSuchMethodException | SecurityException ex) {
-            throw new AssertionError("MarkdownExport interface must declare an exportMarkdown() method.");
+            throw new RuntimeException("MarkdownExport interface must declare an exportMarkdown() method.", ex);
         }
     }
 
@@ -36,7 +36,7 @@ public class MarkdownExportTest {
 
     @Test
     public void testExportingApizzaObjectAsMarkdown() {
-        markdownExportInterfaceMustHaveExportMarkdownMethod(); // First test that the interface is correct
+        theInterfaceMustHaveExportMarkdownMethod(); // First test that the interface is correct
 
         String markdown = callExportMarkdown(margherita);
 
