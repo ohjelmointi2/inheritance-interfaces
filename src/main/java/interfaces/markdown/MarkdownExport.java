@@ -11,7 +11,7 @@ package interfaces.markdown;
  * For example, a Pizza class could later implement this interface and return a
  * markdown representation of a pizza object, for example:
  *
- * <pre>
+ *
  * # Hawaiian
  *
  * Toppings:
@@ -20,7 +20,7 @@ package interfaces.markdown;
  * - mozarella
  *
  * Price: 10.90
- * </pre>
+ *
  *
  * You don't need to know Markdown syntax in this exercise. If you are
  * interested in learning Markdown, you can read more about it here:
