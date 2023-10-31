@@ -9,9 +9,9 @@ import java.util.List;
  *
  * Your task is to implement the MarkdownExport interface in this class. The
  * exportMarkdown() method should return a markdown representation of the pizza
- * object. The markdown representation should look like this:
+ * object. The markdown representation should look something like this:
  *
- * <pre>
+ *
  * # Hawaiian
  *
  * Toppings:
@@ -20,7 +20,6 @@ import java.util.List;
  * - mozarella
  *
  * Price: 10.90
- * </pre>
  */
 public class Pizza {
 
