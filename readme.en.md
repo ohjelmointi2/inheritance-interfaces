@@ -32,8 +32,6 @@ By clicking on the latest *"GitHub Classroom Workflow"* execution from the link 
 
 ### Part 1: inheritance *(basics, 10 % + 10 %)*
 
-Tämän tehtäväpohjan [inheritance.webshop](./src/main/java/inheritance/webshop/)-paketissa on neljä Java-luokkaa, joiden tarkoitus on mallintaa kuvitteellisessa web-pohjaisessa osto- ja myyntipalvelussa olevia tuotteita. Oletuksena kaikki tuotteet sisältävät tyypistä riippumatta [`Product`](./src/main/java/inheritance/webshop/Product.java)-luokassa määritellyt tiedot (title, description, price). [Ajoneuvoille](./src/main/java/inheritance/webshop/Vehicle.java), [asunnoille](./src/main/java/inheritance/webshop/Apartment.java) ja [pääsylipuille](./src/main/java/inheritance/webshop/Ticket.java) on omat luokkansa, jotka sisältävät juuri näille tuotteille ominaisia lisätietoja:
-
 In the [inheritance.webshop](./src/main/java/inheritance/webshop/) package of this task template, there are four Java classes designed to model products in a fictional web-based buying and selling service. By default, all products, regardless of type, contain the information defined in the [`Product`](./src/main/java/inheritance/webshop/Product.java) class (title, description, price). There are separate classes for [vehicles](./src/main/java/inheritance/webshop/Vehicle.java), [apartments](./src/main/java/inheritance/webshop/Apartment.java), and [tickets](./src/main/java/inheritance/webshop/Ticket.java), which include additional information specific to these products:
 
 ```mermaid
@@ -80,6 +78,10 @@ Tässä tehtävässä sinun tulee ensin toteuttaa [`Product`](./src/main/java/in
 
 Molemmille luokille on omat testit: [ProductTest](./src/test/java/inheritance/webshop/ProductTest.java) ja [VehicleTest](./src/test/java/inheritance/webshop/VehicleTest.java). Voit suorittaa testit koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):
 
+In this task, you should first implement the  [`Product`](./src/main/java/inheritance/webshop/Product.java) class according to the comments within it. Once you have implemented the `Product` class and it passes the tests written for the class, implement the [`Vehicle`](./src/main/java/inheritance/webshop/Vehicle.java) class according to the comments written within it.
+
+Both classes have their own tests: [ProductTest](./src/test/java/inheritance/webshop/ProductTest.java) and [VehicleTest](./src/test/java/inheritance/webshop/VehicleTest.java). You can run the tests either using your code editor's testing tool ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) or using the [Gradle tool](https://docs.gradle.org/current/userguide/java_testing.html):
+
 ```sh
 ./gradlew test --tests ProductTest      # unix
 .\gradlew.bat test --tests ProductTest  # windows
@@ -90,8 +92,7 @@ Molemmille luokille on omat testit: [ProductTest](./src/test/java/inheritance/we
 .\gradlew.bat test --tests VehicleTest  # windows
 ```
 
-[`Apartment`](./src/main/java/inheritance/webshop/Apartment.java)- ja [`Ticket`](./src/main/java/inheritance/webshop/Ticket.java)-luokat löytyvät samasta hakemistosta ja voit jatkaa perinnän harjoittelua itsenäisesti niiden parissa. Näiden luokkien toteutus on `Vehicle`-luokan kanssa niin samankaltainen, ettei niille ole automaattisia testejä eikä niitä huomioida erikseen tehtävän arvioinnissa.
-
+The [`Apartment`](./src/main/java/inheritance/webshop/Apartment.java) and [`Ticket`](./src/main/java/inheritance/webshop/Ticket.java) classes can be found in the same directory, and you can continue practicing inheritance independently with them. The implementation of these classes is so similar to the `Vehicle` class that there are no automatic tests for them, and they are not separately considered in the task evaluation.
 
 ### Osa 2: monimuotoisuus *(soveltava, 20 %)*
 
