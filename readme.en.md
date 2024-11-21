@@ -107,11 +107,15 @@ This part is checked using the [`WebShopTest`](./src/test/java/inheritance/websh
 
 💡 *This part utilizes the `Product` and `Vehicle` classes implemented in the previous section, so make sure the previous section works before proceeding to this one.*
 
-### Osa 3: Comparable-rajapinta *(perusteet, 20 %)*
+### Part 3: Comparable interface *(basics, 20 %)*
 
 [Country.java](./src/main/java/interfaces/country/Country.java)-tiedostossa on valmiiksi toteutettu tyypillinen Java-luokka, jonka tarkoitus on mallintaa maita ja niiden väkilukuja. Jatkokehitä tätä luokkaa siten, että se toteuttaa `Comparable<Country>`-rajapinnan.
 
 `Comparable`-rajapinta [löytyy javasta valmiina](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html) ja se sisältää vain yhden metodin: `compareTo`. Toteuta tämä metodi luokassa esitettyjen sääntöjen mukaisesti. Voit testata ratkaisuasi joko valmiin [`CountryMain`](./src/main/java/interfaces/country/CountryMain.java)-pääohjelmaluokan tai [`CountryTest`](./src/test/java/interfaces/country/CountryTest.java)-yksikkötestiluokan avulla:
+
+The [Country.java](./src/main/java/interfaces/country/Country.java) file contains a typical Java class designed to model countries and their populations. Extend this class to implement the `Comparable<Country>` interface.
+
+The `Comparable` interface is [available in Java](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html) and contains only one method: `compareTo`. Implement this method according to the rules presented in the class. You can test your solution using either the provided [`CountryMain`](./src/main/java/interfaces/country/CountryMain.java) main program class or the [`CountryTest`](./src/test/java/interfaces/country/CountryTest.java) unit test class:
 
 ```sh
 ./gradlew test --tests CountryTest      # unix
