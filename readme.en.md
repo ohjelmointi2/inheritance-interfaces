@@ -94,20 +94,18 @@ Both classes have their own tests: [ProductTest](./src/test/java/inheritance/web
 
 The [`Apartment`](./src/main/java/inheritance/webshop/Apartment.java) and [`Ticket`](./src/main/java/inheritance/webshop/Ticket.java) classes can be found in the same directory, and you can continue practicing inheritance independently with them. The implementation of these classes is so similar to the `Vehicle` class that there are no automatic tests for them, and they are not separately considered in the task evaluation.
 
-### Osa 2: monimuotoisuus *(soveltava, 20 %)*
+### Part 2: polymorphism *(applying, 20%)*
 
-Perinnän avulla toteuttamiesi aliluokkien olioita voidaan käyttää yliluokan olioiden paikalla esimerkiksi kokoelmissa tai metodien parametreina. Täydennä [`WebShop`](./src/main/java/inheritance/webshop/WebShop.java)-luokkaan metodit, joiden tarkoituksena on harjoitella sekä eri tyyppisten olioiden käyttämistä yhdessä, että opetella tarvittaessa tunnistamaan, minkä luokan oliosta kulloinkin on tosiasiassa kyse.
+Objects of the subclasses you implemented using inheritance can be used in place of superclass objects, for example, in collections or as method parameters. Complete the methods in the [`WebShop`](./src/main/java/inheritance/webshop/WebShop.java) class to practice using different types of objects together and, if necessary, to learn to identify which class an object actually belongs to at any given time.
 
-
-Tämä osa tarkastetaan [`WebShopTest`](./src/test/java/inheritance/webshop/WebShopTest.java)-luokan avulla, jonka voit suorittaa koodieditorissasi tai Gradlen avulla:
+This part is checked using the [`WebShopTest`](./src/test/java/inheritance/webshop/WebShopTest.java) class, which you can run in your code editor or with Gradle:
 
 ```sh
 ./gradlew test --tests WebShopTest      # unix
 .\gradlew.bat test --tests WebShopTest  # windows
 ```
 
-💡 *Tässä osassa hyödynnetään edellisessä osassa toteutettuja `Product`- sekä `Vehicle`-luokkia, joten varmista että edellinen osa toimii ennen tähän etenemistä.*
-
+💡 *This part utilizes the `Product` and `Vehicle` classes implemented in the previous section, so make sure the previous section works before proceeding to this one.*
 
 ### Osa 3: Comparable-rajapinta *(perusteet, 20 %)*
 
