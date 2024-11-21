@@ -1,3 +1,6 @@
+> [!NOTE]  
+> The English translation for this exercise can be found in [this file](./readme.en.md).
+
 # Perintä ja rajapinnat
 
 Tämä repositorio sisältää joukon Java-harjoituksia, joiden avulla perehdyt perintään ja rajapintoihin.
