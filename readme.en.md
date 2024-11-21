@@ -74,11 +74,7 @@ classDiagram
   Product <|-- Ticket: Extends
 ```
 
-Tässä tehtävässä sinun tulee ensin toteuttaa [`Product`](./src/main/java/inheritance/webshop/Product.java)-luokka siinä olevien kommenttien mukaisesti. Kun olet saanut `Product`-luokan toteutettua ja se läpäisee luokalle kirjoitetut testit, toteuta [`Vehicle`](./src/main/java/inheritance/webshop/Vehicle.java)-luokka siihen kirjoitettujen kommenttien mukaisesti.
-
-Molemmille luokille on omat testit: [ProductTest](./src/test/java/inheritance/webshop/ProductTest.java) ja [VehicleTest](./src/test/java/inheritance/webshop/VehicleTest.java). Voit suorittaa testit koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):
-
-In this task, you should first implement the  [`Product`](./src/main/java/inheritance/webshop/Product.java) class according to the comments within it. Once you have implemented the `Product` class and it passes the tests written for the class, implement the [`Vehicle`](./src/main/java/inheritance/webshop/Vehicle.java) class according to the comments written within it.
+In this exercise, you should first implement the  [`Product`](./src/main/java/inheritance/webshop/Product.java) class according to the comments within it. Once you have implemented the `Product` class and it passes the tests written for the class, implement the [`Vehicle`](./src/main/java/inheritance/webshop/Vehicle.java) class according to the comments written within it.
 
 Both classes have their own tests: [ProductTest](./src/test/java/inheritance/webshop/ProductTest.java) and [VehicleTest](./src/test/java/inheritance/webshop/VehicleTest.java). You can run the tests either using your code editor's testing tool ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) or using the [Gradle tool](https://docs.gradle.org/current/userguide/java_testing.html):
 
@@ -150,49 +146,47 @@ The MarkdownExport interface and the Pizza class are tested using the provided [
 .\gradlew.bat test --tests MarkdownExportTest  # windows
 ```
 
-**Product-luokka**
+**Product class**
 
-Jatkokehitä vielä tämän tehtäväpaketin edellisessä osassa kehitettyä [`Product`-luokkaa](./src/main/java/inheritance/webshop/Product.java) siten, että myös se toteuttaa [`MarkdownExport`-rajapinnan](./src/main/java/interfaces/markdown/MarkdownExport.java). Tuotteiden osalta markdown-esityksessä täytyy olla tuotteen nimi, kuvaus ja hinta, mutta muuten voit määritellä merkkijonon muodon vapaasti.
+Further develop the [`Product`](./src/main/java/inheritance/webshop/Product.java) class from the previous part of this exercise package so that it also implements the [`MarkdownExport`](./src/main/java/interfaces/markdown/MarkdownExport.java) interface. For products, the markdown representation must include the product's name, description, and price, but you can otherwise define the string format freely.
 
-Koska `Product`-luokka sijaitsee eri paketissa kuin MarkdownExport-rajapinta, tulee siihen kirjoittaa `import`-komento: `import interfaces.markdown.MarkdownExport;`
+Since the `Product` class is in a different package than the MarkdownExport interface, you need to write an `import` statement: `import interfaces.markdown.MarkdownExport;`
 
-`Product`-luokan osalta tehtävä tarkastetaan erillisellä [`ProductMarkdownTest`-testiluokalla](./src/test/java/interfaces/markdown/ProductMarkdownTest.java):
+The task for the `Product` class is checked with a separate [`ProductMarkdownTest`](./src/test/java/interfaces/markdown/ProductMarkdownTest.java) test class:
 
 ```sh
 ./gradlew test --tests ProductMarkdownTest      # unix
 .\gradlew.bat test --tests ProductMarkdownTest  # windows
 ```
 
-💡 *Huomaa, että koska `Vehicle`-luokka perii `Product`-luokan, myös `Vehicle` täyttää tämän rajapinnan "automaattisesti". Jos haluat, että ajoneuvoilla on erilainen markdown-esitys kuin muilla tuotteilla, voit vapaasti toteuttaa siihen erilaisen toteutuksen exportMarkdown-metodista.*
+💡 *Note that since the `Vehicle` class inherits from the `Product` class, `Vehicle` also automatically fulfills this interface. If you want vehicles to have a different markdown representation than other products, you are free to implement a different version of the exportMarkdown method for it.*
 
+### Part 5: dependency injection *(advanced, 20 %)*
 
-### Osa 5: "dependency injection" *(edistynyt, 20 %)*
-
-Viimeisenä osana tässä tehtäväpaketissa on perintää soveltava "dependency injection"-esimerkki:
+The final part of this task package is an example of applying inheritance with dependency injection:
 
 > *"In software engineering, dependency injection is a programming technique in which an object or function receives other objects or functions that it requires, as opposed to creating them internally. Dependency injection aims to separate the concerns of constructing objects and using them, leading to loosely coupled programs"*
 >
 > Dependency injection. Wikipedia. https://en.wikipedia.org/wiki/Dependency_injection
 
-Tehtävän viimeisen osan ratkaiseminen vaatii vain minimaalisen muutoksen lähdekoodiin. Pääpaino tässä osassa onkin siinä, että perehdyt annettuihin luokkiin ja niissä esitettyihin kommentteihin:
+Solving the final part of this task requires only minimal changes to the source code. The main focus of this part is to familiarize yourself with the given classes and the comments within them:
 
 * [`Main`](./src/main/java/dependency_injection/Main.java)
 
-  *Tehtävän keskeisin tehtävänanto löytyy tästä luokasta. Tämä on ainoa luokka, jota tässä osassa tulee muuttaa.*
+  *The main task instructions can be found in this class. This is the only class that needs to be modified in this part.*
 
 * [`Application`](./src/main/java/dependency_injection/Application.java)
 * [`PrinterWithTimestamp`](./src/main/java/dependency_injection/PrinterWithTimestamp.java)
 
-Koska tehtävässä ei juurikaan koodata, ei sille ole valmista yksikkötestiä. Varmista ohjelman ja tekemäsi muutoksen toimivuus suorittamalla [`Main`](./src/main/java/dependency_injection/Main.java)-pääohjelmaluokkaa ja tutustu ohjelman tulosteisiin. Tehtävä arvioidaan automaattisesti suorittamalla `Main`-luokka Gradle:n avulla ja tutkimalla sen tulosteita:
+Since this task involves minimal coding, there is no provided unit test for it. Ensure the functionality of the program and your changes by running the [`Main`](./src/main/java/dependency_injection/Main.java) main program class and reviewing the program's output. The task will be automatically evaluated by running the `Main` class with Gradle and examining its output:
 
 ```sh
 ./gradlew run      # unix
 .\gradlew.bat run  # windows
 ```
 
+## License and authors
 
-## Lisenssi ja tekijät
+This exercise is made by Teemu Havulinna and translated to English by Kalle Ilves and it is licensed under a [Creative Commons BY-NC-SA license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-Tämän tehtävän on kehittänyt Teemu Havulinna ja se on lisensoitu [Creative Commons BY-NC-SA -lisenssillä](https://creativecommons.org/licenses/by-nc-sa/4.0/).
-
-Tehtävänannon, lähdekoodien ja testien toteutuksessa on hyödynnetty ChatGPT 3.5 -kielimallia sekä GitHub copilot -tekoälyavustinta.
+ChatGPT 3.5 language model and GitHub copilot AI assistant has been used to implement the exercise.
