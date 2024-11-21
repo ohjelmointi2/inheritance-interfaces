@@ -109,10 +109,6 @@ This part is checked using the [`WebShopTest`](./src/test/java/inheritance/websh
 
 ### Part 3: Comparable interface *(basics, 20 %)*
 
-[Country.java](./src/main/java/interfaces/country/Country.java)-tiedostossa on valmiiksi toteutettu tyypillinen Java-luokka, jonka tarkoitus on mallintaa maita ja niiden väkilukuja. Jatkokehitä tätä luokkaa siten, että se toteuttaa `Comparable<Country>`-rajapinnan.
-
-`Comparable`-rajapinta [löytyy javasta valmiina](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html) ja se sisältää vain yhden metodin: `compareTo`. Toteuta tämä metodi luokassa esitettyjen sääntöjen mukaisesti. Voit testata ratkaisuasi joko valmiin [`CountryMain`](./src/main/java/interfaces/country/CountryMain.java)-pääohjelmaluokan tai [`CountryTest`](./src/test/java/interfaces/country/CountryTest.java)-yksikkötestiluokan avulla:
-
 The [Country.java](./src/main/java/interfaces/country/Country.java) file contains a typical Java class designed to model countries and their populations. Extend this class to implement the `Comparable<Country>` interface.
 
 The `Comparable` interface is [available in Java](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html) and contains only one method: `compareTo`. Implement this method according to the rules presented in the class. You can test your solution using either the provided [`CountryMain`](./src/main/java/interfaces/country/CountryMain.java) main program class or the [`CountryTest`](./src/test/java/interfaces/country/CountryTest.java) unit test class:
@@ -122,19 +118,19 @@ The `Comparable` interface is [available in Java](https://docs.oracle.com/en/jav
 .\gradlew.bat test --tests CountryTest  # windows
 ```
 
-### Osa 4: oman rajapinnan toteuttaminen *(soveltava, 10 % + 10 %)*
+### Part 4: implementing your own interface *(applying, 10% + 10%)*
 
-**MarkdownExport-rajapinta**
+**MarkdownExport interface**
 
-Tehtävän tässä osassa sinun tulee toteuttaa itse oma rajapinta nimeltä `MarkdownExport`. Rajapinta toteutetaan tiedostoon [MarkdownExport.java](./src/main/java/interfaces/markdown/MarkdownExport.java). Määrittele tähän rajapintaan yksi metodi: `exportMarkdown()`. Metodi ei saa ottaa parametreja ja sen tulee palauttaa merkkijono.
+In this part of the exercise, you need to implement your own interface named `MarkdownExport`. The interface should be implemented in the [MarkdownExport.java](./src/main/java/interfaces/markdown/MarkdownExport.java) file. Define one method in this interface: `exportMarkdown()`. The method should not take any parameters and should return a string.
 
-Rajapinnan tarkoituksena on määritellä sen toteuttaville luokille `exportMarkdown()`-metodi, joka muodostaa oliosta [markdown](https://www.markdownguide.org/)-muotoisen merkkijonoesityksen esimerkiksi tiedostoon tallentamista varten. Tehtävän ratkaisemiseksi sinun ei tarvitse tuntea Markdown-syntaksia, riittää että seuraat annettuja esimerkkejä.
+The purpose of the interface is to define an `exportMarkdown()` method for the implementing classes, which generates a [markdown](https://www.markdownguide.org/) formatted string representation of the object, for example, for saving to a file. You do not need to be familiar with Markdown syntax to solve the task; just follow the given examples.
 
-**Pizza-luokka**
+**Pizza Class**
 
-Kun olet määritellyt edellä mainitun rajapinnan, muokkaa tehtäväpohjan valmista [`Pizza`-luokkaa](./src/main/java/interfaces/markdown/Pizza.java) siten, että se toteuttaa kyseisen rajapinnan.
+Once you have defined the above interface, modify the provided [`Pizza`](./src/main/java/interfaces/markdown/Pizza.java) class in the task template so that it implements this interface.
 
-Pizza-luokan `exportMarkdown()`-metodin palauttamassa merkkijonossa on oltava pizzan nimi otsikkona (`# nimi`) sekä lista täytteistä (`- täyte`). Merkkijonon lopussa on oltava pizzan hinta, esimerkiksi seuraavasti:
+The string returned by the `exportMarkdown()` method in the Pizza class should include the pizza's name as a heading (`# name`) and a list of toppings (`- topping`). At the end of the string, include the pizza's price, for example:
 
 ```md
 # Hawaiian
@@ -147,7 +143,7 @@ Toppings:
 Price: 10.90
 ```
 
-MarkdownExport-rajapinta sekä Pizza-luokka testataan valmiilla [`MarkdownExportTest`-testiluokalla](./src/test/java/interfaces/markdown/MarkdownExportTest.java):
+The MarkdownExport interface and the Pizza class are tested using the provided [`MarkdownExportTest`](./src/test/java/interfaces/markdown/MarkdownExportTest.java) test class:
 
 ```sh
 ./gradlew test --tests MarkdownExportTest      # unix
